@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //       function Fraction(firstV, secondV){
+    //     this.firstV=firstV;
+    //     this.secondV=secondV;
+    //   }  
+    //   Fraction.prototype.plus=function(Fraction2){
+    //     let resFirstV=this.firstV*Fraction2.secondV+Fraction2.firstV*this.secondV;
+    //     let resSecondV=this.secondV*Fraction2.secondV;
+    //     return new Fraction(resFirstV, resSecondV);
+    //   }
+    //   Fraction.prototype.minus=function(Fraction2){
+    //     let resFirstV=this.firstV*Fraction2.secondV-Fraction2.firstV*this.secondV;
+    //     let resSecondV=this.secondV*Fraction2.secondV;
+    //     return new Fraction(resFirstV, resSecondV);
+    //   }
+    //   Fraction.prototype.mult=function(Fraction2){
+    //     let resFirstV=this.firstV*Fraction2.firstV;
+    //     let resSecondV=this.secondV*Fraction2.secondV;
+    //     return new Fraction(resFirstV, resSecondV);
+    //   }
+    //   Fraction.prototype.div=function(Fraction2){
+    //     let resFirstV=this.firstV*Fraction2.secondV;
+    //     let resSecondV=this.secondV*Fraction2.firstV;
+    //     return new Fraction(resFirstV, resSecondV);
+    //   }
+    //   Fraction.prototype.red=function(){
+    //    let min=Math.min(this.firstV, this.secondV);
+    //    let max=Math.max(this.firstV, this.secondV);
+    //    let maxDiv;
+    //    for (let i=1;i<=min;i++){
+    //     if((max%i==0)&&(min%i==0)){
+    //         maxDiv=i;
+    //     }
+    //    }
+    //    this.firstV=this.firstV/maxDiv;
+    //    this.secondV=this.secondV/maxDiv;
+    //   }
+    //   Fraction.prototype.show=function(){
+    //     document.write("FirstV: "+this.firstV+" and SecondV: "+this.secondV+"<br />");
+    //   }
+
+    //   let fract1=new Fraction(1, 5);
+    //   let fract2=new Fraction(4, 8);
+    //   let res1=fract1.plus(fract2);
+    //   res1.show();
+    //   let res2=fract1.minus(fract2);
+    //   res2.show();
+    //   let res3=fract1.mult(fract2);
+    //   res3.show();
+    //   let res4=fract1.div(fract2);
+    //   res4.show();
+    //   let fract3=new Fraction(3, 15);
+    //   fract3.red();
+    //   fract3.show();
+
+
+         class Fraction{
+            #firstV;
+            #secondV;
+            constructor(firstV, secondV){
+                this.#firstV=firstV;
+                this.#secondV=secondV;
+            }
+
+            get firstV(){
+                return this.#firstV;
+            }
+            get secondV(){
+                return this.#secondV;
+            }
+            set firstV(value){
+                this.#firstV=value;
+            }
+            set firstV(value){
+                this.#secondV=value;
+            }
+            plus(Fraction2){
+                     let resFirstV=this.#firstV*Fraction2.secondV+Fraction2.firstV*this.#secondV;
+        let resSecondV=this.#secondV*Fraction2.secondV;
+        return new Fraction(resFirstV, resSecondV);
+            }
+            minus(Fraction2){
+                let resFirstV=this.#firstV*Fraction2.secondV-Fraction2.firstV*this.#secondV;
+        let resSecondV=this.#secondV*Fraction2.secondV;
+        return new Fraction(resFirstV, resSecondV);
+            }
+            mult(Fraction2){
+             let resFirstV=this.#firstV*Fraction2.firstV;
+        let resSecondV=this.#secondV*Fraction2.secondV;
+        return new Fraction(resFirstV, resSecondV);
+            }
+            div(Fraction2){
+                let resFirstV=this.#firstV*Fraction2.secondV;
+        let resSecondV=this.#secondV*Fraction2.firstV;
+        return new Fraction(resFirstV, resSecondV);
+            }
+            red(){
+                let min=Math.min(this.#firstV, this.#secondV);
+       let max=Math.max(this.#firstV, this.#secondV);
+       let maxDiv;
+       for (let i=1;i<=min;i++){
+        if((max%i==0)&&(min%i==0)){
+            maxDiv=i;
+        }
+       }
+       this.#firstV=this.#firstV/maxDiv;
+       this.#secondV=this.#secondV/maxDiv;
+            }
+            show(){
+                document.write("FirstV: "+this.#firstV+" and SecondV: "+this.#secondV+"<br />");
+            }
+         }
+             let fract1=new Fraction(1, 5);
+      let fract2=new Fraction(4, 8);
+      let res1=fract1.plus(fract2);
+      res1.show();
+      let res2=fract1.minus(fract2);
+      res2.show();
+      let res3=fract1.mult(fract2);
+      res3.show();
+      let res4=fract1.div(fract2);
+      res4.show();
+      let fract3=new Fraction(3, 15);
+      fract3.red();
+      fract3.show();
+    </script>
+</body>
+</html>

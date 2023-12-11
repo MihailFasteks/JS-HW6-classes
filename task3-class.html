@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+//           function Time(s, m, h){
+//             this.s=s;
+//             this.m=m;
+//             this.h=h;
+//         }
+//         Time.prototype.show=function(){
+//             document.write("Time is: "+this.h+" h, "+this.m+" m, "+this.s+" s <br />");
+//         }
+//         Time.prototype.addS=function(s1){
+//             this.s+=s1;
+//             while(this.s>59){
+//                 this.s-=60;
+//                 this.m++;
+//                 if(this.m>59){
+//                     this.h++;
+//                     this.m-=60;
+//                 }
+//             }
+//         }
+//         Time.prototype.addM=function(m1){
+//             this.m+=m1;
+//             while(this.m>59){
+//                     this.h++;
+//                     this.m-=60;
+//             }
+//         }
+//         Time.prototype.addH=function(h1){
+//             this.h+=h1;
+//             while(this.h>23){
+
+//                     this.h-=24;
+//             }
+//         }
+// let time1=new Time(10, 24, 15);
+// time1.addS(200);
+// time1.show();
+// time1.addM(300);
+// time1.show();
+// time1.addH(8);
+// time1.show();
+
+class Time{
+    #s;
+    #m;
+    #h;
+    constructor(s, m, h){
+            this.#s=s;
+            this.#m=m;
+            this.#h=h;
+    }
+    get s(){
+        return this.#s;
+    }
+    get m(){
+        return this.#m;
+    }
+    get h(){
+        return this.#h;
+    }
+
+    set s(value){
+        this.#s=value;
+    }
+    set m(value){
+        this.#m=value;
+    }
+    set h(value){
+        this.#h=value;
+    }
+
+    show(){
+        document.write("Time is: "+this.#h+" h, "+this.#m+" m, "+this.#s+" s <br />");
+    }
+    addS(s1){
+                    this.#s+=s1;
+            while(this.#s>59){
+                this.#s-=60;
+                this.#m++;
+                if(this.#m>59){
+                    this.#h++;
+                    this.#m-=60;
+                }
+            }
+    }
+    addM(m1){
+                  this.#m+=m1;
+            while(this.#m>59){
+                    this.#h++;
+                    this.#m-=60;
+            }
+    }
+    addH(h1){
+                        this.#h+=h1;
+            while(this.#h>23){
+                    this.#h-=24;
+            }
+    }
+    
+}
+let time1=new Time(10, 24, 15);
+time1.addS(200);
+time1.show();
+time1.addM(300);
+time1.show();
+time1.addH(8);
+time1.show();
+
+    </script>
+</body>
+</html>
